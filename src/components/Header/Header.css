@@ -1,0 +1,18 @@
+.upperWrapper{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+h1{
+    font-size: 25px;
+    margin-top: -17px;
+}
+.circle-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    margin-top: 15px;
+}
