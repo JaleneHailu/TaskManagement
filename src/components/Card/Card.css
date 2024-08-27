@@ -1,23 +1,69 @@
-.cardWrapper{
-    background: linear-gradient(135deg, #0097B2, #7ED957);
-    height: 20vh;
-    margin: 20px 0;
-    border-radius: 15px;
-    padding: 20px;
+.cardWrapper {
+  background: linear-gradient(135deg, #0097b2, #7ed957);
+  height: 20vh;
+  margin-top: 40px;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
 }
-.percentage{
-    width: 70%;
-    color: white;
+.cardWrapper h2{
+  font-weight: 700;
 }
-
-
+.percentage {
+  margin-top: 10px;
+}
+.lowerCard{
+  display: flex;
+  justify-content: space-between;
+}
+.lowerCard li{
+  list-style: none;
+  font-weight: 250;
+}
+.listWrapper{
+  width: 40%;
+  margin-left: 20px;
+  /* margin-top: 20px; */
+}
 .spinner-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .fa-spinner {
-    font-size: 48px; 
-    color: #6fa126; 
+  font-size: 48px;
+  color: #6fa126;
+}
+.cardHolder h3 {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  .cardHolder {
+    width: 60%;
+    margin-left: auto;
+    margin-right: 20%;
+    margin-top: 5vh;
+    color: white;
+  }
+  .cardWrapper {
+    height: 30vh;
+    padding-left: 5vw;
+    padding-right: 7vw;
+  }
+  .cardHolder h3 {
+    margin-top: 40px;
+    display: block;
+  }
+  .cardWrapper h2{
+    font-weight: 700;
+  }
+  .lowerCard ul, .percentage{
+    margin-top: 30px;
+  }
+  p{
+    font-size: larger;
+  }
+  .lowerCard li{
+    margin-top: 7px;
+  }
 }

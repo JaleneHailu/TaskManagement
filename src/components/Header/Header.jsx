@@ -1,24 +1,25 @@
-import React from 'react'
-import './Header.css'
+import React from "react";
+import "./Header.css";
+import man from "../../assets/man.png";
 
 const Header = () => {
-return (
+  return (
     <div className="upperWrapper">
-    <div className="pWrapper">
-        <div><h3>Welcome back, John Doe</h3></div>
-        <div><h1>Avi Trust Homes</h1></div>
-    </div>
-    <div className="imgWrapper">
+      <div className="pWrapper">
         <div>
-            <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3oo0tHTZ0hgXIfdUjC7TIeTOCXhUpvRBd3g&s"
-                alt="Profile"
-                className="circle-image"
-            />
+          <h4>Welcome back, John Doe</h4>
         </div>
+        <div>
+          <h1>Avi Trust Homes</h1>
+        </div>
+      </div>
+      <div className="imgWrapper">
+        <div>
+          <img src={man} alt="Profile" className="circle-image" />
+        </div>
+      </div>
     </div>
-</div>
-)
-}
+  );
+};
 
-export default Header
+export default Header;

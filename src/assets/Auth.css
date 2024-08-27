@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(8, 8, 8); /* Dark background */
+    color: #5dd128; /* Light text */
+}
+.form-container {
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(8, 8, 8);
+    height: auto;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    border: 2px solid rgb(24, 23, 23);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+input,
+select
+{
+    border-radius: 7px;
+    padding: 3px;
+}
+.submit{
+    width: 100%;
+    margin: 6vh auto;
+    border: none;
+}
+.project{
+    margin-top: 10vh;
+    margin-left: auto;
+    justify-content: space-between;
+    width: 40%;
+    border: none;
+}
+
+button{
+    background: linear-gradient(135deg, #0097b2, #7ed957);
+    width: 100%;
+    border: none;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.h2 {
+    color: #1e7e34;
+}
+@media screen and (min-width: 600px) {
+    .form-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        height: auto;
+    }
+    .cont{
+        display: flex;
+        flex-direction: row; 
+    }
+    input,
+    select{
+        width:75% !important;
+        border-radius: 7px;
+        padding: 3px !important;
+    }
+    label {
+        width: 25%;
+    }
+}

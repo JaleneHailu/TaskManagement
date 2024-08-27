@@ -1,0 +1,149 @@
+.customTable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px auto;
+  width: 100%;
+  color: white;
+}
+.team{
+  width: 55%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.userTable{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px auto;
+  width: 100%;
+  color: white;
+}
+.addIcon{
+font-size:20px;
+margin-left: 10px;
+}
+.name_and_task {
+  flex: 1;
+  text-align: left;
+}
+.name{
+  flex: 1;
+  text-align: center;
+
+}
+.icon {
+  font-size: 20px;
+  color: rgb(236, 224, 224) !important;
+}
+.priority,
+.status
+{
+  flex: 1; /* Takes less space */
+  text-align: center;
+  padding: 0 5px;
+}
+
+.date{
+  flex: 1;
+  text-align: center;
+  padding: 0 5px;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.date
+
+.file {
+  text-align: right;
+  flex: 4; 
+  padding: 0 5px;
+}
+
+.file img {
+  width: 20px;
+  height: 20px;
+}
+
+.custom-select select {
+  width: 112%; /* Ensure select elements take full width */
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: white;
+  appearance: none;
+  font-size: 16px;
+  border-color: transparent;
+  background-color: transparent;
+  direction: rtl;
+}
+
+.custom-select select option {
+  direction: ltr;
+}
+
+.file,
+.date {
+  display: none;
+}
+.addTask{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: rgb(236, 224, 224)
+}
+.sort select{
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin-left: 5px;
+  width: auto;
+}
+.search {
+  height: 40px;
+  display: flex;
+  margin-bottom: 30px;
+}
+.searchBox{
+  background-color: #4b4a4a;
+  color: #fff;
+  opacity: 0.1;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px 0px 20px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.teamicons{
+  flex: 1;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 600px) {
+  .file,
+  .date {
+    display: block;
+  }
+
+  .tableWrapper {
+    width: 65%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  hr {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

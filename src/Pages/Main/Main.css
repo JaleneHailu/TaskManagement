@@ -1,0 +1,30 @@
+
+.allWrapper {
+  background-color: rgb(8, 8, 8);
+  height: 100vh;
+  margin: 15px;
+  padding: 15px;
+}
+h1 {
+  font-size: 25px;
+  margin-top: -17px;
+}
+
+.p {
+  /* background-color: #e6c1c1; */
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+@media screen and (min-width: 600px) {
+  .flex {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .allWrapper {
+    margin: 0;
+    padding: 0;
+  }
+}
