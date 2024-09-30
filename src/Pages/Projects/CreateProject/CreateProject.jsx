@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from '../../../Axios/Axios';  // Ensure the correct path to your axios instance
+import axios from '../../../axios/axios';  // Ensure the correct path to your axios instance
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

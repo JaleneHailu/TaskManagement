@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from '../../../Axios/Axios';
+import axios from '../../../axios/axios';
 import '../../../assets/Auth.css'
 
 const SignIn = () => {
@@ -32,6 +32,15 @@ const SignIn = () => {
       return;
     }
 
+    const token = localStorage.getItem('token');
+        if (!token) {
+          throw new Error('No authentication token found.');
+        }
+    const headers = {
+      'Content-Type': 'application/json', // Set content type
+      // Add any other headers if needed
+    };
+
     try {
       await axios.post('/users/register', { 
         username: usernameValue,
@@ -39,7 +48,7 @@ const SignIn = () => {
         lastname: lastnameValue,
         role: roleValue,
         password: passwordValue,
-      });
+      }, { headers }); // Add headers here
 
       alert('Register successful. Please login.');
       navigate('/'); // Redirect user to login page
@@ -83,14 +92,14 @@ const SignIn = () => {
               <div className="mb-3 cont">
                 <label htmlFor="role" className="form-label">Role</label>
                 <select
-                ref={roleDom}
-                className="form-select"
-                defaultValue="Role">
+                  ref={roleDom}
+                  className="form-select"
+                  defaultValue="Role">
                   <option value="Role" disabled>Select a role</option>
                   <option value="Admin">Admin</option>
                   <option value="Team Leader">Team Leader</option>
                   <option value="Team Member">Team Member</option>
-                  </select>
+                </select>
               </div>
 
               <div className="mb-3 cont">

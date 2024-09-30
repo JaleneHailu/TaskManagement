@@ -29,14 +29,14 @@ const NavigationIcons = () => {
           </div>
         </li>
         </Link>
-        <li>
+        {/* <li>
           <div className="icons">
             <GrTask className="icon" />
             <div className="p">
               <p>Tasks</p>
             </div>
           </div>
-        </li>
+        </li> */}
         <Link to="/team" className="no-underline-link">
         <li>
           <div className="icons">

@@ -6,6 +6,7 @@ import Header from "../../components/Header/Header";
 import NavigationIcons from "../../components/NavigationIcons/NavigationIcons";
 import { useContext } from "react";
 import { AppState } from "../../App";
+import FileManager from "../../components/File";
 
 const MainSec = () => {
   return (
@@ -13,7 +14,6 @@ const MainSec = () => {
       <Header />
       <Card />
       <NavigationIcons />
-      <TaskTable />
     </div>
   );
 };

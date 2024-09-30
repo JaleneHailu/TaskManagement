@@ -1,12 +1,13 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from '../../../Axios/Axios';
+import axios from '../../../axios/axios';
 import '../../../assets/Auth.css'
 
 const Login = () => {
   const navigate = useNavigate(); 
   const usernameDom = useRef();
   const passwordDom = useRef();
+
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -31,6 +32,10 @@ const Login = () => {
 
       alert('Login successful.');
       localStorage.setItem('token', data.token);
+      // When user logs in and you receive the user's details from the backend
+      localStorage.setItem('firstname', data.firstname);
+      localStorage.setItem('lastname', data.lastname);
+
       navigate('/home');
       console.log(data);
     } catch (error) {

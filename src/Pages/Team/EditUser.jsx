@@ -1,36 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from '../../Axios/Axios';
+import axios from '../../axios/axios';
 
 const EditUser = () => {
   const { userid } = useParams();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
   const [userData, setUserData] = useState({
     username: '',
     firstname: '',
     lastname: '',
     role: '',
+    password: '', // Add password field
   });
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
+        const token = localStorage.getItem('token');
+        const headers = {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        };
+
         const fullURL = `/users/user/${userid}`;
         console.log('Fetching user with URL:', fullURL);
-        const { data } = await axios.get(fullURL);
+        const { data } = await axios.get(fullURL, { headers }); // Add headers
         setUserData(data); // Populate form with fetched user data
         console.log('Fetched user data:', data);
       } catch (error) {
         console.error("Failed to fetch user:", error.message);
       }
     };
+    
     if (userid) {
       fetchUser(); // Only fetch if userid is defined
     } else {
       console.error("No userid provided in the route.");
     }
   }, [userid]);
-  
 
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -38,20 +45,41 @@ const EditUser = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!userData.username || !userData.firstname || !userData.lastname || !userData.role) {
-      console.error("Please fill in all required fields.");
+    const token = localStorage.getItem('token');
+    if (!token) throw new Error('No authentication token found.');
+
+    const headers = { 
+      Authorization: `Bearer ${token}`, 
+      'Content-Type': 'application/json' 
+    };
+
+    // Prepare data for update, only include fields that are not empty
+    const updatedData = {
+      username: userData.username || undefined,
+      firstname: userData.firstname || undefined,
+      lastname: userData.lastname || undefined,
+      role: userData.role || undefined,
+      user_password: userData.password ? userData.password : undefined // Send password only if provided
+    };
+
+    // Filter out undefined fields to avoid sending them in the request
+    const payload = Object.fromEntries(
+      Object.entries(updatedData).filter(([_, v]) => v !== undefined)
+    );
+
+    if (Object.keys(payload).length === 0) {
+      console.error("No fields to update.");
       return;
     }
+
     try {
-      await axios.put(`/users/edit/${userid}`, userData);
+      await axios.put(`/users/edit/${userid}`, payload, { headers }); // Correct order of parameters
       navigate('/team');
     } catch (error) {
       console.error("Failed to update user:", error.message);
       navigate('/team');
     }
   };
-  
-  
 
   return (
     <div className="container mt-5">

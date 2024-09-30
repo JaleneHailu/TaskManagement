@@ -26,7 +26,7 @@ font-size:20px;
 margin-left: 10px;
 }
 .name_and_task {
-  flex: 1;
+  flex: 0.5;
   text-align: left;
 }
 .name{
@@ -41,29 +41,32 @@ margin-left: 10px;
 .priority,
 .status
 {
-  flex: 1; /* Takes less space */
+  flex: 0.5; 
   text-align: center;
   padding: 0 5px;
 }
 
 .date{
-  flex: 1;
+  flex: 0.5;
   text-align: center;
   padding: 0 5px;
-  background-color: transparent;
   color: white;
+}
+.datePicker{
+  text-align: center;
+  background-color: transparent;
   border: none;
 }
 
 .date
 
 .file {
-  text-align: right;
-  flex: 4; 
+  text-align: right; 
   padding: 0 5px;
 }
 
 .file img {
+  flex: 0.5;
   width: 20px;
   height: 20px;
 }
@@ -127,6 +130,9 @@ margin-left: 10px;
   display: flex;
   justify-content: space-between;
 }
+.no-underline-link {
+  text-decoration: none !important; 
+}
 
 @media screen and (min-width: 600px) {
   .file,
@@ -135,7 +141,7 @@ margin-left: 10px;
   }
 
   .tableWrapper {
-    width: 65%;
+    max-width: 960px;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;

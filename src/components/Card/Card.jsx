@@ -15,18 +15,18 @@ const Card = () => {
         <h3>Welcome back, {user.username}</h3>
       </div>
       <div className="cardWrapper">
-        <div className="projectName"><h2>Evan Project</h2></div>
+        <div className="projectName"><h2>Task Management System</h2></div>
         <div className="lowerCard">
-          <div className="listWrapper">
+          {/* <div className="listWrapper">
           <ul>
               <li>3 tasks Completed</li>
               <li>3 tasks on Progress</li>
               <li>2 tasks stuck</li>
             </ul>
-          </div>
+          </div> */}
           <div>
             <p className="percentage">
-          <b>Your Team was 50% Effective this week</b>
+          Effortlessly manage your tasks and projects with this platform. Stay organized, prioritize effectively, and collaborate seamlessly with your team.
         </p>
           </div>
         </div>
@@ -39,3 +39,4 @@ const Card = () => {
 };
 
 export default Card;
+
